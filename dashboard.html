@@ -26,11 +26,22 @@
                 <i data-feather="arrow-left"></i>
                 Back to Home
             </a>
-            <h2 class="dashboard-header-title">Dashboard</h2>
-            <button class="dashboard-header-btn logout-btn" id="logoutBtn">
-                <i data-feather="log-out"></i>
-                Logout
-            </button>
+            <div class="dashboard-header-brand">
+                <a href="index.html" class="nav-logo dashboard-logo" aria-label="Imperial Library Home">
+                    <span class="logo-text">Imperial Library</span>
+                    <i data-feather="book-open" class="logo-icon"></i>
+                </a>
+                <h2 class="dashboard-header-title">Dashboard</h2>
+            </div>
+            <div class="dashboard-header-actions">
+                <button class="dashboard-header-btn theme-toggle" id="themeToggle" type="button" aria-label="Toggle light theme">
+                    <i data-feather="sun"></i>
+                </button>
+                <button class="dashboard-header-btn logout-btn" id="logoutBtn">
+                    <i data-feather="log-out"></i>
+                    Logout
+                </button>
+            </div>
         </div>
     </header>
 

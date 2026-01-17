@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize all functionality
     initNavbar();
+    initThemeToggle();
     initCarousel();
     initFilters();
     initSearch();
@@ -18,6 +19,36 @@ document.addEventListener('DOMContentLoaded', function() {
     initActiveLinks();
     initImageErrorHandling();
 });
+
+// ============================================
+// THEME TOGGLE
+// ============================================
+function initThemeToggle() {
+    const toggle = document.getElementById('themeToggle');
+    if (!toggle) return;
+
+    const body = document.body;
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'light') {
+        body.classList.add('light-theme');
+    }
+
+    const updateIcon = () => {
+        const icon = toggle.querySelector('i');
+        if (!icon) return;
+        icon.setAttribute('data-feather', body.classList.contains('light-theme') ? 'moon' : 'sun');
+        feather.replace();
+    };
+
+    updateIcon();
+
+    toggle.addEventListener('click', function() {
+        body.classList.toggle('light-theme');
+        localStorage.setItem('theme', body.classList.contains('light-theme') ? 'light' : 'dark');
+        updateIcon();
+    });
+}
 
 // ============================================
 // NAVBAR FUNCTIONALITY

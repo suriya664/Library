@@ -25,13 +25,31 @@
     gap: var(--spacing-md);
 }
 
+.dashboard-header-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    flex: 1;
+    min-width: 0;
+}
+
+.dashboard-logo {
+    font-size: 1.25rem;
+}
+
 .dashboard-header-title {
     font-family: var(--font-accent);
     font-size: 1.5rem;
     color: var(--accent);
     margin: 0;
-    flex: 1;
     text-align: center;
+}
+
+.dashboard-header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
 }
 
 .dashboard-header-btn {
@@ -52,6 +70,14 @@
     transition: var(--transition-normal);
     text-decoration: none;
     white-space: nowrap;
+}
+
+.dashboard-header-btn.theme-toggle {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
 }
 
 .dashboard-header-btn i {
@@ -181,16 +207,36 @@
     padding: 4px 8px;
     border-radius: 4px;
     display: inline-block;
+    font-weight: 600;
+    letter-spacing: 0.2px;
 }
 
 .stat-change.positive {
-    color: var(--highlight);
-    background: rgba(80, 200, 120, 0.2);
+    color: #eafff3;
+    background: rgba(80, 200, 120, 0.38);
+    border: 1px solid rgba(80, 200, 120, 0.75);
+    box-shadow: 0 0 12px rgba(80, 200, 120, 0.35);
 }
 
 .stat-change.negative {
-    color: #ff6b6b;
+    color: #fff0f0;
+    background: rgba(255, 107, 107, 0.38);
+    border: 1px solid rgba(255, 107, 107, 0.75);
+    box-shadow: 0 0 12px rgba(255, 107, 107, 0.35);
+}
+
+body.light-theme .stat-change.positive {
+    color: #0f3b22;
+    background: rgba(80, 200, 120, 0.2);
+    border-color: rgba(80, 200, 120, 0.55);
+    box-shadow: 0 2px 10px rgba(80, 200, 120, 0.25);
+}
+
+body.light-theme .stat-change.negative {
+    color: #5a1010;
     background: rgba(255, 107, 107, 0.2);
+    border-color: rgba(255, 107, 107, 0.55);
+    box-shadow: 0 2px 10px rgba(255, 107, 107, 0.25);
 }
 
 /* DASHBOARD GRID */
@@ -489,6 +535,11 @@
     .actions-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .stat-change {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -521,6 +572,11 @@
     .stat-card-dashboard {
         flex-direction: column;
         text-align: center;
+    }
+
+    .stat-change {
+        font-size: 0.95rem;
+        padding: 7px 12px;
     }
 }
 
