@@ -8,7 +8,57 @@ document.addEventListener('DOMContentLoaded', function() {
     initDashboard();
     initDashboardAnimations();
     initActionButtons();
+    initMobileMenu();
 });
+
+// Mobile menu functionality
+function initMobileMenu() {
+    const dashNavToggle = document.getElementById('dashNavToggle');
+    const dashMobileMenu = document.getElementById('dashMobileMenu');
+    const themeToggleMobile = document.getElementById('themeToggleMobile');
+    const logoutBtnMobile = document.getElementById('logoutBtnMobile');
+    
+    if (dashNavToggle && dashMobileMenu) {
+        dashNavToggle.addEventListener('click', () => {
+            dashMobileMenu.classList.toggle('active');
+            const icon = dashNavToggle.querySelector('i');
+            if (dashMobileMenu.classList.contains('active')) {
+                icon.setAttribute('data-feather', 'x');
+            } else {
+                icon.setAttribute('data-feather', 'menu');
+            }
+            feather.replace();
+        });
+    }
+
+    // Theme toggle for mobile
+    if (themeToggleMobile) {
+        themeToggleMobile.addEventListener('click', () => {
+            const themeToggle = document.getElementById('themeToggle');
+            if (themeToggle) themeToggle.click();
+            dashMobileMenu.classList.remove('active');
+            feather.replace();
+        });
+    }
+
+    // Logout for mobile
+    if (logoutBtnMobile) {
+        logoutBtnMobile.addEventListener('click', () => {
+            const logoutBtn = document.getElementById('logoutBtn');
+            if (logoutBtn) logoutBtn.click();
+            dashMobileMenu.classList.remove('active');
+        });
+    }
+
+    // Close menu when clicking links
+    const mobileLinks = dashMobileMenu.querySelectorAll('.dash-mobile-link:not(button)');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            dashMobileMenu.classList.remove('active');
+            feather.replace();
+        });
+    });
+}
 
 // Initialize dashboard functionality
 function initDashboard() {

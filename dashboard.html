@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Imperial Library Management</title>
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
-    
+    <link rel="icon" type="image/x-icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Yeseva+One&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Yeseva+One&display=swap"
+        rel="stylesheet">
+
     <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
-    
+
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
+
 <body>
     <!-- DASHBOARD HEADER -->
     <header class="dashboard-header">
         <div class="dashboard-header-container">
-            <a href="index.html" class="dashboard-header-btn back-btn">
+            <a href="index.html" class="dashboard-header-btn back-btn-desktop">
                 <i data-feather="arrow-left"></i>
                 Back to Home
             </a>
@@ -31,15 +36,37 @@
                     <span class="logo-text">Imperial Library</span>
                     <i data-feather="book-open" class="logo-icon"></i>
                 </a>
-                <h2 class="dashboard-header-title">Dashboard</h2>
             </div>
-            <div class="dashboard-header-actions">
-                <button class="dashboard-header-btn theme-toggle" id="themeToggle" type="button" aria-label="Toggle light theme">
+            <div class="dashboard-header-actions-desktop">
+                <button class="dashboard-header-btn theme-toggle" id="themeToggle" type="button"
+                    aria-label="Toggle light theme">
                     <i data-feather="sun"></i>
                 </button>
                 <button class="dashboard-header-btn logout-btn" id="logoutBtn">
                     <i data-feather="log-out"></i>
                     Logout
+                </button>
+            </div>
+            <!-- Mobile Toggle -->
+            <button class="dash-nav-toggle" id="dashNavToggle" aria-label="Toggle Navigation">
+                <i data-feather="menu"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="dash-mobile-menu" id="dashMobileMenu">
+            <div class="dash-mobile-menu-content">
+                <a href="index.html" class="dash-mobile-link">
+                    <i data-feather="home"></i>
+                    <span>Back to Home</span>
+                </a>
+                <button class="dash-mobile-link theme-toggle-mobile" id="themeToggleMobile">
+                    <i data-feather="sun"></i>
+                    <span>Change Theme</span>
+                </button>
+                <button class="dash-mobile-link logout-btn-mobile" id="logoutBtnMobile">
+                    <i data-feather="log-out"></i>
+                    <span>Logout</span>
                 </button>
             </div>
         </div>
@@ -49,7 +76,7 @@
     <section class="dashboard-section">
         <div class="container">
             <h1 class="dashboard-title">Library Management Dashboard</h1>
-            
+
             <!-- STATISTICS CARDS -->
             <div class="stats-grid">
                 <div class="stat-card-dashboard">
@@ -62,7 +89,7 @@
                         <span class="stat-change positive">+12% this month</span>
                     </div>
                 </div>
-                
+
                 <div class="stat-card-dashboard">
                     <div class="stat-icon-wrapper">
                         <i data-feather="users" class="stat-icon-large"></i>
@@ -73,7 +100,7 @@
                         <span class="stat-change positive">+8% this month</span>
                     </div>
                 </div>
-                
+
                 <div class="stat-card-dashboard">
                     <div class="stat-icon-wrapper">
                         <i data-feather="book" class="stat-icon-large"></i>
@@ -84,7 +111,7 @@
                         <span class="stat-change positive">+15% this month</span>
                     </div>
                 </div>
-                
+
                 <div class="stat-card-dashboard">
                     <div class="stat-icon-wrapper">
                         <i data-feather="star" class="stat-icon-large"></i>
@@ -247,7 +274,8 @@
                     </div>
                     <div class="recent-books-list">
                         <div class="recent-book-item">
-                            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=100" alt="Book" class="recent-book-image">
+                            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=100" alt="Book"
+                                class="recent-book-image">
                             <div class="recent-book-info">
                                 <h4 class="recent-book-title">The Art of Reading</h4>
                                 <p class="recent-book-author">By Jane Smith</p>
@@ -255,7 +283,8 @@
                             </div>
                         </div>
                         <div class="recent-book-item">
-                            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=100" alt="Book" class="recent-book-image">
+                            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=100" alt="Book"
+                                class="recent-book-image">
                             <div class="recent-book-info">
                                 <h4 class="recent-book-title">Ancient Wisdom</h4>
                                 <p class="recent-book-author">By Robert Chen</p>
@@ -263,7 +292,8 @@
                             </div>
                         </div>
                         <div class="recent-book-item">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="Book" class="recent-book-image">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="Book"
+                                class="recent-book-image">
                             <div class="recent-book-info">
                                 <h4 class="recent-book-title">Modern Literature</h4>
                                 <p class="recent-book-author">By Emily Johnson</p>
@@ -281,13 +311,13 @@
     <script src="js/dashboard.js"></script>
     <script>
         // Initialize Feather Icons
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             feather.replace();
-            
+
             // Logout button functionality
             const logoutBtn = document.getElementById('logoutBtn');
             if (logoutBtn) {
-                logoutBtn.addEventListener('click', function() {
+                logoutBtn.addEventListener('click', function () {
                     if (confirm('Are you sure you want to logout?')) {
                         window.location.href = 'index.html';
                     }
@@ -296,5 +326,5 @@
         });
     </script>
 </body>
-</html>
 
+</html>

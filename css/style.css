@@ -15,19 +15,19 @@
     --surface-alt: #10161D;
     --border: #253244;
     --muted: #B7C0CC;
-    
+
     /* Typography */
     --font-heading: 'Philosopher', serif;
     --font-body: 'Poppins', sans-serif;
     --font-accent: 'Yeseva One', serif;
-    
+
     /* Spacing */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
     --spacing-lg: 3rem;
     --spacing-xl: 4rem;
-    
+
     /* Transitions */
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
@@ -97,7 +97,12 @@ body::before {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-heading);
     font-weight: 700;
     line-height: 1.2;
@@ -210,8 +215,15 @@ a:hover {
 }
 
 @keyframes gentle-glow {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
 }
 
 .nav-menu {
@@ -385,9 +397,19 @@ body.light-theme .navbar {
 }
 
 @keyframes float-particles {
-    0%, 100% { transform: translate(0, 0); }
-    33% { transform: translate(30px, -30px); }
-    66% { transform: translate(-20px, 20px); }
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    33% {
+        transform: translate(30px, -30px);
+    }
+
+    66% {
+        transform: translate(-20px, 20px);
+    }
 }
 
 .hero-emerald-rays {
@@ -404,8 +426,13 @@ body.light-theme .navbar {
 }
 
 @keyframes ray-rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .hero-content {
@@ -425,6 +452,7 @@ body.light-theme .navbar {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -443,7 +471,8 @@ body.light-theme .navbar {
     font-size: 1.5rem;
     color: var(--text);
     margin-bottom: var(--spacing-md);
-    font-weight: 300;
+    font-weight: 500;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .hero-search {
@@ -616,16 +645,27 @@ section {
     overflow-x: auto;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) transparent;
+    -ms-overflow-style: auto;
     flex: 1;
-    padding: var(--spacing-sm) 0;
+    padding: var(--spacing-md) 0;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-x: contain;
 }
 
 .carousel-container::-webkit-scrollbar {
-    display: none;
+    display: block;
+    height: 6px;
+}
+
+.carousel-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 10px;
 }
 
 .carousel-btn {
@@ -641,6 +681,7 @@ section {
     cursor: pointer;
     transition: var(--transition-normal);
     flex-shrink: 0;
+    z-index: 10;
 }
 
 .carousel-btn:hover {
@@ -1149,6 +1190,11 @@ section {
     color: rgba(240, 245, 240, 0.6);
 }
 
+body.light-theme .contact-form input::placeholder,
+body.light-theme .contact-form textarea::placeholder {
+    color: rgba(29, 35, 43, 0.6);
+}
+
 .contact-form textarea {
     resize: vertical;
     min-height: 120px;
@@ -1389,7 +1435,9 @@ section {
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .loader-content p {
@@ -2240,4 +2288,3 @@ section {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent);
 }
-
